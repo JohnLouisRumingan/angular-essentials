@@ -1,0 +1,10 @@
+<p>This is the loading component</p>
+<br>
+<!-- <p>{{loadState}}</p> -->
+<p [textContent]="loadState"></p>
+<!-- other method to bind above using textContent property in vanilla JS/HTML  -->
+<button (click)="onLoadingClick($event)">Click to Finish Loading</button>
+<div>
+    <!-- <input type="text" (input)="loadState = $event.target.value"> -->
+    <input type="text" [(ngModel)]="loadState">
+</div>

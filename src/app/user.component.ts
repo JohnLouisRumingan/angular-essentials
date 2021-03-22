@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -8,9 +8,13 @@ import { Component } from '@angular/core';
 
 
 export class UserComponent{
-  name = 'John-Louis'; //because string, TS implicitly attaches name: string to this property
+  @Input() rootName: any; //because string, TS implicitly attaches name: string to this property
+  // property is setable from app.component due to @Input() decorator
+  @Output() nameChanged = new EventEmitter<string>();
+
 
   onUserInput(event: any){
-    this.name = event.target.value;
+    // this.name = event.target.value;
+    this.nameChanged.emit(event.target.value); //event.target.value should be a string passed into this object
   }
 }

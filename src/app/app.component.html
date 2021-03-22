@@ -14,7 +14,8 @@
   </head>
   <body>
     <h2>Welcome to my app, {{title}}</h2>
-    <app-user></app-user>
+    <app-user [rootName]="rootName" (nameChanged)="onNameChanged($event)"></app-user>
     <app-loading></app-loading>
+    <app-cart [items]="items" (cartChanged)="onCartAddition($event)"></app-cart>
   </body>
 </html>

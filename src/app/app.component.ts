@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-essentials';
   rootName = 'John-Louis';
-  items = ['Apples', 'Bananas', 'Cherries'];
+  rootItems = ['Apples', 'Bananas', 'Cherries'];
 
   onNameChanged(newName: any){
     this.rootName = newName;
@@ -18,9 +18,10 @@ export class AppComponent {
   onCartAddition(newItem: any){
     console.log(newItem);
     console.log("Item Added!");
-    this.items.push(newItem);
-    console.log(this.items);
+    this.rootItems.push(newItem);
+    console.log(this.rootItems);
 
-    // new item is pushed into the array; however, app-cart is not being updated with updated array
+    // new item is pushed into the array
+    // however, app-cart is not being updated with updated array. Will be done with directives
   }
 }

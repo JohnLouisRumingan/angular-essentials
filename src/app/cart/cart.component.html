@@ -1,5 +1,14 @@
-<p>cart works!</p>
-Current cart: {{items}}
-<br><br>
-<input type="text" (input)="onCartInput($event)">
-<button (click)="onCartSubmit(newItem)">Add Item</button>
+<div>
+  <br>
+  Current cart: {{items}}
+  <br>
+  Upgraded cart:
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of items">{{item}}</li>
+  </ul>
+  <br><br>
+  <!-- <input type="text" (input)="onCartInput($event)"> -->
+  <input type="text" [(ngModel)]="newItem">
+  <button (click)="onCartSubmit(newItem)">Add Item</button>
+</div>
+
